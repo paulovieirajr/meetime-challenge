@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 import static com.github.paulovieirajr.meetime.rest.constants.HubSpotPathController.WEBHOOK_PATH;
@@ -17,7 +18,7 @@ public class HubSpotContactWebhookController implements HubSpotContactWebhookCon
     private static final Logger LOGGER = LoggerFactory.getLogger(HubSpotContactWebhookController.class);
 
     @PostMapping(WEBHOOK_PATH)
-    public ResponseEntity<?> receiveContactCreatedWebhook(Map<String, Object> payload) {
+    public ResponseEntity<?> receiveContactCreatedWebhook(List<Map<String, Object>> payload) {
         LOGGER.info(LOG_PAYLOAD_RECEIVED.getMessage(), payload);
         return ResponseEntity.ok(payload);
     }
