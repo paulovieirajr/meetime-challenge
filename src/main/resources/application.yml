@@ -24,6 +24,10 @@ hubspot:
   scheduler:
     cron: ${HUBSPOT_SCHEDULER_CRON:0 0/5 * * * ?}
 
+logging:
+  pattern:
+    dateformat: 'dd-MM-yyyy HH:mm:ss'
+
 springdoc:
   auto-tag-classes: false
   pathsToMatch: /**
