@@ -10,21 +10,29 @@
     </parent>
     <groupId>com.github.paulovieirajr</groupId>
     <artifactId>meetime</artifactId>
-    <version>0.0.4</version>
-    <name>meetime</name>
+    <version>0.0.5</version>
+    <name>Meetime Challenge</name>
     <description>Meetime Challenge with HubSpot integration</description>
     <url/>
     <licenses>
-        <license/>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <id>paulovieirajr</id>
+            <name>Paulo Vieira</name>
+            <email>paulovieiradev@outlook.com</email>
+        </developer>
     </developers>
     <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
+        <connection>scm:git:https://github.com/paulovieirajr/meetime-challenge.git</connection>
+        <developerConnection>scm:git:git@github.com:paulovieirajr/meetime-challenge.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/paulovieirajr/meetime-challenge</url>
     </scm>
     <properties>
         <java.version>21</java.version>
