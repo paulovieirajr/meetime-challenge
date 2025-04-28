@@ -28,10 +28,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({ FeignException.class, FeignException.FeignClientException.class })
     public ResponseEntity<ApiErrorResponse> handleFeignException(FeignException ex) {
-        var status = ex.status();
-        var apiErrorResponse = new ApiErrorResponse((HttpStatus) HttpStatusCode.valueOf(status));
+        HttpStatus httpStatus = HttpStatus.resolve(ex.status());
+        if (httpStatus == null) {
+            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+        }
+        var apiErrorResponse = new ApiErrorResponse(httpStatus);
         apiErrorResponse.setMessage(ex.getMessage());
-        return new ResponseEntity<>(apiErrorResponse, apiErrorResponse.getStatus());
+        return new ResponseEntity<>(apiErrorResponse, httpStatus);
     }
 
     @ExceptionHandler(BearerTokenInvalidException.class)
