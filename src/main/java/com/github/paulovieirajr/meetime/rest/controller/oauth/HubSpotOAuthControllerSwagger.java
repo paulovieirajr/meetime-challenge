@@ -16,7 +16,7 @@ public interface HubSpotOAuthControllerSwagger {
     @ApiResponse(responseCode = "503", description = "Service unavailable")
     ResponseEntity<AuthUrlResponse> getAuthorizationUrl();
 
-    @Operation(summary = "Only Triggered when the user interacts with the OAuth", description = "Handle the HubSpot OAuth2 callback")
+    @Operation(summary = "Only Triggered when the user interacts with the OAuth", description = "Handle the HubSpot OAuth2 callback", hidden = true)
     @ApiResponse(responseCode = "200", description = "Token exchanged successfully")
     @ApiResponse(responseCode = "400", description = "Bad request")
     @ApiResponse(responseCode = "500", description = "Internal server error")
