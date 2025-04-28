@@ -9,8 +9,8 @@
         <relativePath/>
     </parent>
     <groupId>com.github.paulovieirajr</groupId>
-    <artifactId>meetime</artifactId>
-    <version>0.0.5</version>
+    <artifactId>meetime-challenge</artifactId>
+    <version>0.0.6</version>
     <name>Meetime Challenge</name>
     <description>Meetime Challenge with HubSpot integration</description>
     <url/>
@@ -112,6 +112,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>meetime-challenge</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
