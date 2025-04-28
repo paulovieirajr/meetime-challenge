@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.paulovieirajr</groupId>
     <artifactId>meetime</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>meetime</name>
     <description>Meetime Challenge with HubSpot integration</description>
     <url/>
