@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HubSpot OAuth Success</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Autenticação concluída com sucesso!</h1>
+    <p>Session ID: <span class="session-id" th:text="${sessionId}"></span></p>
+    <button class="copy-btn" onclick="copySessionId()">Copiar Session ID</button>
+    <p id="copyMessage" class="copy-message">Session ID copiado!</p>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
