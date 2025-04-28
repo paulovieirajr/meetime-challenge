@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: meetime
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: ${FEIGN_CONNECT_TIMEOUT:5000}
+            readTimeout: ${FEIGN_READ_TIMEOUT:5000}
+
+hubspot:
+  client:
+    id: ${HUBSPOT_CLIENT_ID}
+    secret: ${HUBSPOT_CLIENT_SECRET}
+  scopes: ${HUBSPOT_SCOPES}
+  redirect:
+    uri: ${HUBSPOT_REDIRECT_URI}
+  url:
+    for-auth: ${HUBSPOT_FOR_AUTH_URL:https://app.hubspot.com/oauth/authorize}
+    token: ${HUBSPOT_TOKEN_URL:https://api.hubapi.com/oauth/v1/token}
+    create-contact: ${HUBSPOT_CREATE_CONTACT_URL:https://api.hubapi.com/crm/v3/objects/contacts}
+  scheduler:
+    cron: ${HUBSPOT_SCHEDULER_CRON:0 0/5 * * * ?}
+
+springdoc:
+  auto-tag-classes: false
+  pathsToMatch: /**
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    filter: true

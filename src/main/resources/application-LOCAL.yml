@@ -1,0 +1,5 @@
+hubspot:
+  redirect:
+    uri: ${HUBSPOT_REDIRECT_URI:http://localhost:8080/oauth-callback}
+  url:
+    oauth-success: ${HUBSPOT_OAUTH_SUCCESS_URL:http://localhost:8080/oauth-success}

@@ -1,0 +1,5 @@
+hubspot:
+  redirect:
+    uri: ${HUBSPOT_REDIRECT_URI}
+  url:
+    oauth-success: ${HUBSPOT_OAUTH_SUCCESS_URL}
