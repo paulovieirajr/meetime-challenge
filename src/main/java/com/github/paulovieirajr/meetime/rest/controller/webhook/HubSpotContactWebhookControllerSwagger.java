@@ -11,7 +11,7 @@ import java.util.Map;
 @Tag(name = "HubSpot Contact Webhook", description = "Operations related to HubSpot contact webhooks")
 public interface HubSpotContactWebhookControllerSwagger {
 
-    @Operation(summary = "Triggered when a contact is created in HubSpot", description = "This endpoint is triggered when a contact is created in HubSpot. It receives the contact data and processes it accordingly.")
+    @Operation(summary = "Only Triggered when a contact is created in HubSpot", description = "This endpoint is triggered when a contact is created in HubSpot. It receives the contact data and processes it accordingly.")
     @ApiResponse(responseCode = "200", description = "Webhook received successfully")
     @ApiResponse(responseCode = "500", description = "Internal server error")
     @ApiResponse(responseCode = "503", description = "Service unavailable")
