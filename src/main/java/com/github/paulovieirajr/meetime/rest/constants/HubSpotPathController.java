@@ -9,5 +9,5 @@ public final class HubSpotPathController {
     public static final String OAUTH_SUCCESS_PATH = "/oauth-success";
     public static final String ACCESS_TOKEN_PATH = "/access-token";
     public static final String CREATE_CONTACT_PATH = "/create-contact";
-    public static final String WEBHOOK_PATH = "/create-contact-webhook";
+    public static final String WEBHOOK_PATH = "/webhook";
 }
