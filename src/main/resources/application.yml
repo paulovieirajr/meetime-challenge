@@ -1,3 +1,11 @@
+info:
+  app:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+    scm:
+      url: @project.scm.url@
+
 spring:
   application:
     name: meetime
@@ -23,6 +31,10 @@ hubspot:
     create-contact: ${HUBSPOT_CREATE_CONTACT_URL:https://api.hubapi.com/crm/v3/objects/contacts}
   scheduler:
     cron: ${HUBSPOT_SCHEDULER_CRON:0 0/5 * * * ?}
+
+logging:
+  pattern:
+    dateformat: 'dd-MM-yyyy HH:mm:ss'
 
 springdoc:
   auto-tag-classes: false
