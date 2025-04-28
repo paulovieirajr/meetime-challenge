@@ -1,7 +1,7 @@
 package com.github.paulovieirajr.meetime.token.log;
 
 public enum SessionStoreLogger {
-    LOG_SAVING_TOKEN("Salvando o token para a sessão <{}>"),
+    LOG_SAVING_TOKEN("[SESSION] - Salvando o token para a sessão <{}>"),
     LOG_RETRIEVING_TOKEN("[SESSION] - Recuperando o token de acesso da sessão <{}>"),
     LOG_SESSION_NOT_FOUND("[SESSION] - Sessão não encontrada para o sessionId <{}>"),
     LOG_TOKEN_EXPIRED("[SESSION] - O token de acesso está expirado, tentando renová-lo"),
