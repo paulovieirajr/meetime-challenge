@@ -250,7 +250,7 @@ Requisitos:
 
 <details>
 <summary>1. Após clonar o projeto, abrir no Intellij</summary>
-</br>
+<br>
 Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 ![image](https://github.com/user-attachments/assets/0f999352-a833-44f1-ba23-c4f1b21fc897)
@@ -259,14 +259,14 @@ Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 <details>
 <summary>2. Configurar o Java 21</summary>
-</br>
+<br>
 ![image](https://github.com/user-attachments/assets/20e91fb0-a7b5-483f-a486-21d13831fa74)
 
 </details>
 
 <details>
 <summary>3. Configurar as variáveis de ambiente</summary>
-</br>
+<br>
 Utilizar a seguinte string, substituindo apenas os placeholders ```XXXXXX``` para as três variáveis de ambiente necessárias:
 
 ```plaintext
