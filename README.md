@@ -5,6 +5,23 @@
 ![HubSpot](https://img.shields.io/badge/HubSpot-FF7A59.svg?style=for-the-badge&logo=HubSpot&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=Render&logoColor=white)
 
+## Índice
+
+- [Sobre a aplicação](#sobre-a-aplicação)
+- [Objetivos](#objetivos)
+- [Observações](#observações)
+- [Diagrama de sequência](#diagrama-de-sequência)
+- [Motivações](#motivações)
+  - [Spring Boot](#spring-boot)
+  - [Open Feign](#open-feign)
+  - [Spring Bean Validation](#spring-bean-validation)
+  - [Thymeleaf](#thymeleaf)
+  - [Swagger](#swagger)
+- [Melhorias](#melhorias)
+- [Como executar a aplicação](#como-executar-a-aplicação)
+  - [Render](#render)
+
+
 ## Sobre a aplicação
 
 Construída em Java 21 com Spring Boot, foi utilizado OpenFeign para conectar com o HubSpot. A aplicação conta com logs semânticos, na qual é possível identificar cada fluxo com
@@ -37,30 +54,34 @@ para simular um sessionId que é necessário para a troca com o token, embora o 
 
 Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito do desafio.
 
+### Spring Boot
 <details>
-  <summary>Spring Boot</summary>
+  <summary>Detalhes</summary>
 </br>
   <p>O motivo é bem simples, não tenho o conhecimento do outro framework sugerido, 
   e como trabalho com Spring Boot há alguns anos, era a decisão mais assertiva dado o timebox curto para entrega do desafio.
   </p>
 </details>
 
+### Open Feign
 <details>
-  <summary>Open Feign</summary>
+  <summary>Detalhes</summary>
 </br>
   <p>Precisava de um client HTTP para comunicar com o HubSpot, o OpenFeign é simples, declarativo e fácil de usar, não é tão verboso quanto o RestTemplate e facilita os testes.
   </p>
 </details>
 
+### Spring Bean Validation
 <details>
-  <summary>Spring Bean Validation</summary>
+  <summary>Detalhes</summary>
 </br>
   <p>Uma necessidade para validar DTOs de entrada, e no caso do desafio, era necessário, pois precisamos validar o contato que vamos criar.
   </p>
 </details>
 
+### Thymeleaf
 <details>
-  <summary>Thymeleaf</summary>
+  <summary>Detalhes</summary>
 </br>
   <p>Aqui um ponto que talvez não era necessário, mas... Como não temos um frontend, e eu queria um fluxo que o access_token não ficasse exposto na tela do
     navegador, então simulei um session_id usando UUID nessa troca do code pelo access_token com HubSpot. O token por si só é salvo em um ConcurrentHashMap(também
@@ -69,8 +90,9 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
   </p>
 </details>
 
+### Swagger
 <details>
-  <summary>Swagger</summary>
+  <summary>Detalhes</summary>
 </br>
   <p>Acredito que esse seja autoexplicativo, mas é um requisito que julgo indispensável em qualquer projeto que lida com APIs Rest visando a documentação dos endpoints.
   </p>
