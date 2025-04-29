@@ -289,5 +289,10 @@ Configure a aplicação, da seguinte forma, e colocando a string com as variáve
 
 </details>
 
+<details>
+<summary>4. Por fim, executar a aplicação</summary>
+</br>
 
-
+Assim como no Docker, basta fazer os testes via [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
+  
+</details>
