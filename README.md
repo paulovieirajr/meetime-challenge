@@ -21,6 +21,8 @@
 - [Como executar a aplicação](#como-executar-a-aplicação)
   - [Render](#render)
   - [Local](#local)
+    - [Docker Compose](#docker-compose)
+    - [Intellij IDEA](#intellij-idea)
 
 
 ## Sobre a aplicação
@@ -120,7 +122,7 @@ Sobre o deploy, procurei algo simples e de graça, apenas para o propósito do d
 
 </details>
 
-Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou Postman com essa [collection](https://github.com/user-attachments/files/19951611/Meetime.-.HubSpot.postman_collection.json).
+Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
 
 Eu vou demonstrar via Swagger:
 
@@ -133,6 +135,8 @@ Eu vou demonstrar via Swagger:
 
 <details>
 <summary>2. Colar esse Authorization URL no navegador e iniciar o fluxo OAuth com o HubSpot, ao final copiar o SessionID que é gerado</summary>
+
+Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada para realizar o fluxo, eu realizei tanto o teste usando uma conta fictícia quando a minha conta de teste associada ao app.
 
 ![image](https://github.com/user-attachments/assets/58c296e5-3eec-4380-9aef-b801d0453d1f)
 
@@ -186,6 +190,8 @@ Como a Swagger UI tem um bug quando declaramos o header como Authorization, deve
 <details>
 <summary>7. Contato criado com sucesso</summary>
 
+Caso necessário, também é possível visualizar o contato criado pela UI da plataforma do HubSpot.
+
 ![image](https://github.com/user-attachments/assets/84457187-3fb3-45cc-967a-fc54564ffee1)
 
 </details>
@@ -193,14 +199,45 @@ Como a Swagger UI tem um bug quando declaramos o header como Authorization, deve
 <details>
 <summary>8. Log no Render com o Webhook acionado após o contato ser criado, repare no id do passo anterior</summary>
 
+Aqui, eu só recupero o evento que o HubSpot envia e realizo um log simples para evidência.
+
 ![image](https://github.com/user-attachments/assets/002ccd15-9455-4d89-a73e-0fc264e0e6a9)
 
 </details>
 
 ### Local
 
+:heavy_exclamation_mark: Importante ressaltar que o passo 4 do desafio acaba não sendo contemplado de forma local, já que o HubSpot exige um endpoint com o protocolo HTTPS.
 
+Eu vou descrever duas formas, mas em ambas é necessária três variáveis de ambientes que serão enviada via email num arquivo ```.env```:
 
+- HUBSPOT_CLIENT_ID
+- HUBSPOT_CLIENT_SECRET
+- HUBSPOT_SCOPES
+
+#### Docker Compose
+
+O projeto já contempla um ```docker-compose.yml``` para facilitar o teste local. Os requisitos são bem simples:
+
+- Ter o docker-compose instalado na máquina
+- Colocar o arquivo ```.env``` enviado via email na raiz do projeto.
+
+Tendo isso, basta rodar:
+
+```bash
+docker compose up -d
+```
+
+Depois, verifique os logs com o comando:
+
+```bash
+docker logs meetime-challenge -f
+```
+
+Os passos para a criação de contato já foi descrito no passo anterior, acho redundante descrevê-los novamente. 
+Basicamente, use o [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
+
+#### Intellij IDEA
 
 
 
