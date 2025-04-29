@@ -128,14 +128,14 @@ Eu vou demonstrar via Swagger:
 
 <details>
 <summary>1. Recuperar a Authorization URL</summary>
-
+</br>
 ![image](https://github.com/user-attachments/assets/aa4509b0-bb23-43d0-9b5a-f955a221b4e0)
 
 </details>
 
 <details>
 <summary>2. Colar esse Authorization URL no navegador e iniciar o fluxo OAuth com o HubSpot, ao final copiar o SessionID que é gerado</summary>
-
+</br>
 Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada para realizar o fluxo, eu realizei tanto o teste usando uma conta fictícia quando a minha conta de teste associada ao app.
 
 ![image](https://github.com/user-attachments/assets/58c296e5-3eec-4380-9aef-b801d0453d1f)
@@ -144,28 +144,28 @@ Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada pa
 
 <details>
 <summary>3. Eu usei uma conta de teste no passo anterior, para conectar no app não pode ser uma conta de dev</summary>
-
+</br>
 ![image](https://github.com/user-attachments/assets/eb3f9bc2-6934-491b-b554-ab4429e05b14)
 
 </details>
 
 <details>
 <summary>4. Copiar o SessionID</summary>
-
+</br>
 ![image](https://github.com/user-attachments/assets/cca4855a-03a2-4ea2-a719-35c7dbcfc030)
 
 </details>
 
 <details>
 <summary>5. Pegar o access-token para criar o contato</summary>
-
+</br>
 ![image](https://github.com/user-attachments/assets/7e370332-8250-4c4f-9425-39869e5303f5)
 
 </details>
 
 <details>
 <summary>6. Criar um contato informando o access-token</summary>
-<br>
+</br>
 É possível criar um contato com a seguinte estrutura, onde apenas email e firstname são obrigatórios:
 
 ```json
@@ -189,7 +189,7 @@ Como a Swagger UI tem um bug quando declaramos o header como Authorization, deve
 
 <details>
 <summary>7. Contato criado com sucesso</summary>
-
+</br>
 Caso necessário, também é possível visualizar o contato criado pela UI da plataforma do HubSpot.
 
 ![image](https://github.com/user-attachments/assets/84457187-3fb3-45cc-967a-fc54564ffee1)
@@ -198,7 +198,7 @@ Caso necessário, também é possível visualizar o contato criado pela UI da pl
 
 <details>
 <summary>8. Log no Render com o Webhook acionado após o contato ser criado, repare no id do passo anterior</summary>
-
+</br>
 Aqui, eu só recupero o evento que o HubSpot envia e realizo um log simples para evidência.
 
 ![image](https://github.com/user-attachments/assets/002ccd15-9455-4d89-a73e-0fc264e0e6a9)
@@ -250,7 +250,7 @@ Requisitos:
 
 <details>
 <summary>1. Após clonar o projeto, abrir no Intellij</summary>
-
+</br>
 Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 ![image](https://github.com/user-attachments/assets/0f999352-a833-44f1-ba23-c4f1b21fc897)
@@ -259,19 +259,20 @@ Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 <details>
 <summary>2. Configurar o Java 21</summary>
-
+</br>
 ![image](https://github.com/user-attachments/assets/20e91fb0-a7b5-483f-a486-21d13831fa74)
 
 </details>
 
 <details>
 <summary>3. Configurar as variáveis de ambiente</summary>
-
+</br>
 Utilizar a seguinte string, substituindo apenas os placeholders ```XXXXXX``` para as três variáveis de ambiente necessárias:
 
 ```plaintext
 HUBSPOT_CLIENT_ID=XXXXXX;HUBSPOT_CLIENT_SECRET=XXXXXX;HUBSPOT_SCOPES=XXXXXX;SPRING_PROFILES_ACTIVE=LOCAL
 ```
+
 Para acessar essa configuração, clique ```Shift + Shift``` e escreva ```Run Debug``` e clique em ```Edit Configurations```:
 
 ![image](https://github.com/user-attachments/assets/342052a5-deff-4980-abb2-3680c1ebac4e)
