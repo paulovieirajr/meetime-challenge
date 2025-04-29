@@ -136,7 +136,7 @@ Eu vou demonstrar via Swagger:
 <details>
 <summary>2. Colar esse Authorization URL no navegador e iniciar o fluxo OAuth com o HubSpot, ao final copiar o SessionID que é gerado</summary>
 </br>
-Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada para realizar o fluxo, eu realizei tanto o teste usando uma conta fictícia quando a minha conta de teste associada ao app.
+Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada para realizar o fluxo, eu realizei o teste usando uma conta fictícia de empresa e a minha conta de teste associada ao app.
 </br>
   
 ![image](https://github.com/user-attachments/assets/58c296e5-3eec-4380-9aef-b801d0453d1f)
