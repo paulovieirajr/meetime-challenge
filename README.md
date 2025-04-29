@@ -1,5 +1,15 @@
 # Meetime Challenge - Integração com HubSpot :computer:
 
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=Spring-Boot&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white)
+![HubSpot](https://img.shields.io/badge/HubSpot-FF7A59.svg?style=for-the-badge&logo=HubSpot&logoColor=white)
+![Render](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=Render&logoColor=white)
+
+## Sobre a aplicação
+
+Construída em Java 21 com Spring Boot, foi utilizado OpenFeign para conectar com o HubSpot. A aplicação conta com logs semânticos, na qual é possível identificar cada fluxo com
+clareza, testes unitários com JUnit 5 e Mockito. A aplicação conta com configurações para variáveis de ambientes personalizadas, facilitando a alteração das mesma de uma forma centralizada. Foi criado uma "simulação" de Redis para salvar, recuperar, remover e renovar token, como se trata de um desafio, implementar um Redis tornaria o processo mais complicado. Também foi criado um Scheduler, para a cada 5 minutos olhar para o nosso "Redis Simulado" e remover tokens expirados. Para o requisito webhook foi necessário realizar o deploy da aplicação de forma pública. Eu escolhi a Render para isso, eles fornecem uma máquina com 0.1 CPU e 512MB de RAM, suficiente para o propósito do desafio.
+
 ## Objetivos
 
 1. Geração da Authorization URL:
@@ -65,4 +75,9 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
   <p>Acredito que esse seja autoexplicativo, mas é um requisito que julgo indispensável em qualquer projeto que lida com APIs Rest visando a documentação dos endpoints.
   </p>
 </details>
+
+## Melhorias
+
+A aplicação cumpre o propósito de integrar com o HubSpot, mas um ponto de melhora que eu enxergo é ter um frontend para que possa ser feito um redirecionamento após o fluxo OAuth2. Sobre o token, na minha visão um Redis encaixaria bem nesse cenário, eu "simulei" usando um ConcurrentHashMap, isso é possível ver na classe [OAuthSessionStore](https://github.com/paulovieirajr/meetime-challenge/blob/main/src/main/java/com/github/paulovieirajr/meetime/token/OAuthSessionStore.java), onde implementei não só o
+salvamento do token, mas também a questão da expiração e aproveitei também para implementar a chamada ao HubSpot para o refresh_token quando o access_token estiver expirado.
 
