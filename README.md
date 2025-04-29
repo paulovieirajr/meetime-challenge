@@ -81,3 +81,96 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
 A aplicação cumpre o propósito de integrar com o HubSpot, mas um ponto de melhora que eu enxergo é ter um frontend para que possa ser feito um redirecionamento após o fluxo OAuth2. Sobre o token, na minha visão um Redis encaixaria bem nesse cenário, eu "simulei" usando um ConcurrentHashMap, isso é possível ver na classe [OAuthSessionStore](https://github.com/paulovieirajr/meetime-challenge/blob/main/src/main/java/com/github/paulovieirajr/meetime/token/OAuthSessionStore.java), onde implementei não só o
 salvamento do token, mas também a questão da expiração e aproveitei também para implementar a chamada ao HubSpot para o refresh_token quando o access_token estiver expirado.
 
+## Como executar a aplicação
+
+### Render
+
+:heavy_exclamation_mark: Aqui vai um disclaimer, o Render por padrão desativa máquinas free sem tráfego, porém, é reativada ao ser acionada, pode ter um delay o que é normal
+nessa situação.
+
+Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou Postman com essa [collection](https://github.com/user-attachments/files/19951611/Meetime.-.HubSpot.postman_collection.json).
+
+Eu vou demonstrar via Swagger:
+
+<details>
+<summary>1. Recuperar a Authorization URL</summary>
+
+![image](https://github.com/user-attachments/assets/aa4509b0-bb23-43d0-9b5a-f955a221b4e0)
+
+</details>
+
+<details>
+<summary>2. Colar esse Authorization URL no navegador e iniciar o fluxo OAuth com o HubSpot, ao final copiar o SessionID que é gerado</summary>
+
+![image](https://github.com/user-attachments/assets/58c296e5-3eec-4380-9aef-b801d0453d1f)
+
+</details>
+
+<details>
+<summary>3. Eu usei uma conta de teste no passo anterior, para conectar no app não pode ser uma conta de dev</summary>
+
+![image](https://github.com/user-attachments/assets/eb3f9bc2-6934-491b-b554-ab4429e05b14)
+
+</details>
+
+<details>
+<summary>4. Copiar o SessionID</summary>
+
+![image](https://github.com/user-attachments/assets/cca4855a-03a2-4ea2-a719-35c7dbcfc030)
+
+</details>
+
+<details>
+<summary>5. Pegar o access-token para criar o contato</summary>
+
+![image](https://github.com/user-attachments/assets/7e370332-8250-4c4f-9425-39869e5303f5)
+
+</details>
+
+<details>
+<summary>6. Criar um contato informando o access-token</summary>
+<br>
+É possível criar um contato com a seguinte estrutura, onde apenas email e firstname são obrigatórios:
+
+```json
+{
+  "email": "string",
+  "firstname": "string",
+  "lastname": "string",
+  "phone": "string",
+  "company": "string",
+  "website": "string",
+  "lifecyclestage": "string"
+}
+```
+
+Como a Swagger UI tem um bug quando declaramos o header como Authorization, devemos informar o access-token no cadeado, caso contrário não vai funcionar.
+![image](https://github.com/user-attachments/assets/a362d5aa-c1ef-4075-bceb-63fd39e5e3f2)
+
+)
+
+</details>
+
+<details>
+<summary>7. Contato criado com sucesso</summary>
+
+![image](https://github.com/user-attachments/assets/84457187-3fb3-45cc-967a-fc54564ffee1)
+
+</details>
+
+<details>
+<summary>8. Log no Render com o Webhook acionado após o contato ser criado, repare no id do passo anterior</summary>
+
+![image](https://github.com/user-attachments/assets/002ccd15-9455-4d89-a73e-0fc264e0e6a9)
+
+</details>
+
+
+
+
+
+
+
+
+
+
