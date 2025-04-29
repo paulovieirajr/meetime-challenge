@@ -103,7 +103,7 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
 ## Melhorias
 
 A aplicação cumpre o propósito de integrar com o HubSpot, mas um ponto de melhora que eu enxergo é ter um frontend para que possa ser feito um redirecionamento após o fluxo OAuth2. Sobre o token, na minha visão um Redis encaixaria bem nesse cenário, eu "simulei" usando um ConcurrentHashMap, isso é possível ver na classe [OAuthSessionStore](https://github.com/paulovieirajr/meetime-challenge/blob/main/src/main/java/com/github/paulovieirajr/meetime/token/OAuthSessionStore.java), onde implementei não só o
-salvamento do token, mas também a questão da expiração e aproveitei também para implementar a chamada ao HubSpot para o refresh_token quando o access_token estiver expirado.
+salvamento do token, mas também a questão da expiração e aproveitei também para implementar a chamada ao HubSpot para o refresh_token quando o access_token estiver expirado. Isso com Redis, se tornaria bem mais prático.
 
 Um outro ponto, usar Resilience4J para implementar Circuit Breaker e Retry, visto que estamos nos comunicando com uma API externa.
 
