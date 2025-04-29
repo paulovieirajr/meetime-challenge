@@ -20,6 +20,7 @@
 - [Melhorias](#melhorias)
 - [Como executar a aplicação](#como-executar-a-aplicação)
   - [Render](#render)
+  - [Local](#local)
 
 
 ## Sobre a aplicação
@@ -58,8 +59,7 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
 <details>
   <summary>Detalhes</summary>
 </br>
-  <p>O motivo é bem simples, não tenho o conhecimento do outro framework sugerido, 
-  e como trabalho com Spring Boot há alguns anos, era a decisão mais assertiva dado o timebox curto para entrega do desafio.
+  <p>O motivo é bem simples, como trabalho com Spring Boot há alguns anos, era a decisão mais assertiva dado o timebox curto para entrega do desafio.
   </p>
 </details>
 
@@ -103,12 +103,22 @@ Vou explicar nessa seção os motivos das libs utilizadas, esse é um requisito 
 A aplicação cumpre o propósito de integrar com o HubSpot, mas um ponto de melhora que eu enxergo é ter um frontend para que possa ser feito um redirecionamento após o fluxo OAuth2. Sobre o token, na minha visão um Redis encaixaria bem nesse cenário, eu "simulei" usando um ConcurrentHashMap, isso é possível ver na classe [OAuthSessionStore](https://github.com/paulovieirajr/meetime-challenge/blob/main/src/main/java/com/github/paulovieirajr/meetime/token/OAuthSessionStore.java), onde implementei não só o
 salvamento do token, mas também a questão da expiração e aproveitei também para implementar a chamada ao HubSpot para o refresh_token quando o access_token estiver expirado.
 
+Um outro ponto, usar Resilience4J para implementar Circuit Breaker e Retry, visto que estamos nos comunicando com uma API externa.
+
+Sobre o deploy, procurei algo simples e de graça, apenas para o propósito do desafio, claro que para um cenário real e produtivo essa opção não seria válida, por inúmeras razões.
+
 ## Como executar a aplicação
 
 ### Render
 
-:heavy_exclamation_mark: Aqui vai um disclaimer, o Render por padrão desativa máquinas free sem tráfego, porém, é reativada ao ser acionada, pode ter um delay o que é normal
-nessa situação.
+:heavy_exclamation_mark: Aqui vai um disclaimer, o Render por padrão desativa máquinas free sem tráfego, porém, é reativada ao ser acionada, basta aguardar alguns minutos até que o serviço seja reativado.
+
+<details>
+<summary>Pode ser que essa tela fique carregando até que o serviço fique disponível</summary>
+  
+![image](https://github.com/user-attachments/assets/b8175c94-acb4-4f53-bc3b-4d47afe8be51)
+
+</details>
 
 Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou Postman com essa [collection](https://github.com/user-attachments/files/19951611/Meetime.-.HubSpot.postman_collection.json).
 
@@ -187,6 +197,7 @@ Como a Swagger UI tem um bug quando declaramos o header como Authorization, deve
 
 </details>
 
+### Local
 
 
 
