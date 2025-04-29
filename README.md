@@ -128,7 +128,7 @@ Eu vou demonstrar via Swagger:
 
 <details>
 <summary>1. Recuperar a Authorization URL</summary>
-</br>
+
 ![image](https://github.com/user-attachments/assets/aa4509b0-bb23-43d0-9b5a-f955a221b4e0)
 
 </details>
@@ -137,7 +137,8 @@ Eu vou demonstrar via Swagger:
 <summary>2. Colar esse Authorization URL no navegador e iniciar o fluxo OAuth com o HubSpot, ao final copiar o SessionID que é gerado</summary>
 </br>
 Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada para realizar o fluxo, eu realizei tanto o teste usando uma conta fictícia quando a minha conta de teste associada ao app.
-
+</br>
+  
 ![image](https://github.com/user-attachments/assets/58c296e5-3eec-4380-9aef-b801d0453d1f)
 
 </details>
@@ -152,6 +153,7 @@ Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada pa
 <details>
 <summary>4. Copiar o SessionID</summary>
 </br>
+  
 ![image](https://github.com/user-attachments/assets/cca4855a-03a2-4ea2-a719-35c7dbcfc030)
 
 </details>
@@ -159,6 +161,7 @@ Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada pa
 <details>
 <summary>5. Pegar o access-token para criar o contato</summary>
 </br>
+  
 ![image](https://github.com/user-attachments/assets/7e370332-8250-4c4f-9425-39869e5303f5)
 
 </details>
@@ -250,7 +253,8 @@ Requisitos:
 
 <details>
 <summary>1. Após clonar o projeto, abrir no Intellij</summary>
-<br>
+</br>
+  
 Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 ![image](https://github.com/user-attachments/assets/0f999352-a833-44f1-ba23-c4f1b21fc897)
@@ -259,14 +263,16 @@ Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
 
 <details>
 <summary>2. Configurar o Java 21</summary>
-<br>
+</br>
+  
 ![image](https://github.com/user-attachments/assets/20e91fb0-a7b5-483f-a486-21d13831fa74)
 
 </details>
 
 <details>
 <summary>3. Configurar as variáveis de ambiente</summary>
-<br>
+</br>
+  
 Utilizar a seguinte string, substituindo apenas os placeholders ```XXXXXX``` para as três variáveis de ambiente necessárias:
 
 ```plaintext
