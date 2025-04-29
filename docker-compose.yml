@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: meetime-challenge
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HUBSPOT_CLIENT_ID=${HUBSPOT_CLIENT_ID}
+      - HUBSPOT_CLIENT_SECRET=${HUBSPOT_CLIENT_SECRET}
+      - HUBSPOT_SCOPES=${HUBSPOT_SCOPES}
+      - SPRING_PROFILES_ACTIVE=LOCAL
+    ports:
+      - "8080:8080"
