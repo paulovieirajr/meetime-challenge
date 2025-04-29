@@ -146,6 +146,7 @@ Um ponto importante, caso não tenha uma conta no HubSpot, deverá ser criada pa
 <details>
 <summary>3. Eu usei uma conta de teste no passo anterior, para conectar no app não pode ser uma conta de dev</summary>
 </br>
+  
 ![image](https://github.com/user-attachments/assets/eb3f9bc2-6934-491b-b554-ab4429e05b14)
 
 </details>
