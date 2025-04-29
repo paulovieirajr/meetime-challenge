@@ -219,7 +219,7 @@ Eu vou descrever duas formas, mas em ambas é necessária três variáveis de am
 
 O projeto já contempla um ```docker-compose.yml``` para facilitar o teste local. Os requisitos são bem simples:
 
-- Ter o docker-compose instalado na máquina
+- Ter o docker e o docker-compose instalado na máquina
 - Colocar o arquivo ```.env``` enviado via email na raiz do projeto.
 
 Tendo isso, basta rodar:
@@ -239,8 +239,48 @@ Basicamente, use o [Swagger Local](http://localhost:8080/swagger-ui/index.html) 
 
 #### Intellij IDEA
 
+Eu recomendo usar o docker por ser mais prático, porém fica aqui também via Intellij IDEA.
 
+Requisitos:
 
+- Java 21
+- Intellij Community Edition
+
+</details>
+
+<details>
+<summary>1. Após clonar o projeto, abrir no Intellij</summary>
+
+Buscar o três pontinhos no canto superior e clicar em ```Project Structure```
+
+![image](https://github.com/user-attachments/assets/0f999352-a833-44f1-ba23-c4f1b21fc897)
+
+</details>
+
+<details>
+<summary>2. Configurar o Java 21</summary>
+
+![image](https://github.com/user-attachments/assets/20e91fb0-a7b5-483f-a486-21d13831fa74)
+
+</details>
+
+<details>
+<summary>3. Configurar as variáveis de ambiente</summary>
+
+Utilizar a seguinte string, substituindo apenas os placeholders ```XXXXXX``` para as três variáveis de ambiente necessárias:
+
+```plaintext
+HUBSPOT_CLIENT_ID=XXXXXX;HUBSPOT_CLIENT_SECRET=XXXXXX;HUBSPOT_SCOPES=XXXXXX;SPRING_PROFILES_ACTIVE=LOCAL
+```
+Para acessar essa configuração, clique ```Shift + Shift``` e escreva ```Run Debug``` e clique em ```Edit Configurations```:
+
+![image](https://github.com/user-attachments/assets/342052a5-deff-4980-abb2-3680c1ebac4e)
+
+Configure a aplicação, da seguinte forma, e colocando a string com as variáveis de ambiente em ```Environment variables```:
+
+![image](https://github.com/user-attachments/assets/caa2a214-d9cf-4804-b66e-5dad26d8fb1e)
+
+</details>
 
 
 
