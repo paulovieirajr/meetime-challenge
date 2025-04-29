@@ -122,7 +122,7 @@ Sobre o deploy, procurei algo simples e de graça, apenas para o propósito do d
 
 </details>
 
-Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
+Para testar via Render é bem simples, pode ser via [Swagger](https://meetime-challenge-ybpb.onrender.com/swagger-ui/index.html) ou no Postman com essa [collection](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
 
 Eu vou demonstrar via Swagger:
 
@@ -238,7 +238,7 @@ docker logs meetime-challenge -f
 ```
 
 Os passos para a criação de contato já foi descrito no passo anterior, acho redundante descrevê-los novamente. 
-Basicamente, use o [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
+Basicamente, use o [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou no Postman com essa [collection](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
 
 #### Intellij IDEA
 
@@ -293,6 +293,6 @@ Configure a aplicação, da seguinte forma, e colocando a string com as variáve
 <summary>4. Por fim, executar a aplicação</summary>
 </br>
 
-Assim como no Docker, basta fazer os testes via [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou a [Collection Postman](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
+Assim como no Docker, basta fazer os testes via [Swagger Local](http://localhost:8080/swagger-ui/index.html) ou no Postman com essa [collection](https://github.com/user-attachments/files/19968674/Meetime.-.HubSpot.postman_collection.json).
   
 </details>
