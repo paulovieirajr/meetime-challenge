@@ -224,7 +224,7 @@ Eu vou descrever duas formas, mas em ambas é necessária três variáveis de am
 O projeto já contempla um ```docker-compose.yml``` para facilitar o teste local. Os requisitos são bem simples:
 
 - Ter o docker e o docker-compose instalado na máquina
-- Colocar o arquivo ```.env``` enviado via email na raiz do projeto.
+- Colocar o arquivo ```.env``` enviado via email na raiz do projeto, caso o arquivo fique com um nome diferente no anexo do email, basta renomear para ```.env```.
 
 Tendo isso, basta rodar:
 
